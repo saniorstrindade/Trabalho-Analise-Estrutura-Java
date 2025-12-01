@@ -1,17 +1,15 @@
 package Estruturas;
 
 public class Node {
-    int data;       
-    Node left;     
-    Node right;
-
-    int height;
-
-    public Node(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-        
-        this.height = 1;
-}
+    public int valor;
+    public Node esquerda;
+    public Node direita;
+    public int altura; 
+    
+    public Node(int valor) {
+        this.valor = valor;
+        this.esquerda = null;
+        this.direita = null;
+        this.altura = 1; 
+    }
 }
