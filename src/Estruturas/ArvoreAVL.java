@@ -59,7 +59,7 @@ public class ArvoreAVL {
     
     private Node inserirRecursivo(Node node, int valor) {
         operacoes++;
-        
+        // vai comparar se o nó é nulo
         if (node == null) {
             return new Node(valor);
         }
@@ -71,31 +71,31 @@ public class ArvoreAVL {
         } else {
             return node;
         }
-        
+        //vai recalcular a altura do nó
         node.altura = 1 + Math.max(altura(node.esquerda), altura(node.direita));
         
         int balance = getFatorBalanceamento(node);
         
-        
+        //rotação simples a direita
         if (balance > 1 && valor < node.esquerda.valor) {
             return rotacaoDireita(node);
         }
-        
+        //rotação simples a esquerda
         if (balance < -1 && valor > node.direita.valor) {
             return rotacaoEsquerda(node);
         }
         
-        
+        //rotação dupla esquerda-direita
         if (balance > 1 && valor > node.esquerda.valor) {
             node.esquerda = rotacaoEsquerda(node.esquerda);
             return rotacaoDireita(node);
         }
-        
+        //rotação dupla direita-esquerda
         if (balance < -1 && valor < node.direita.valor) {
             node.direita = rotacaoDireita(node.direita);
             return rotacaoEsquerda(node);
         }
-        
+        //caso nenhuma rotação for necessária retorna o no
         return node;
     }
     
