@@ -1,5 +1,5 @@
-import Algoritmos.Busca;
-import Algoritmos.Ordenacao;
+import Algoritimos.Busca;
+import Algoritimos.Ordenacao;
 import Estruturas.*;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
