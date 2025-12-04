@@ -94,7 +94,7 @@ public class Main {
         
                 
         int[] arrayOrdenado = Arrays.copyOf(dados, dados.length);
-        Arrays.sort(arrayOrdenado); 
+        Ordenacao.quickSort(arrayOrdenado); 
         testarBuscaBinaria(arrayOrdenado, dados);
         }
         
@@ -396,7 +396,7 @@ private static void medirBuscaAVL(ArvoreAVL avl, int valor, String rotulo) {
 private static int[] gerarDadosOrdenados(int tamanho) {
     int[] dados = new int[tamanho];
     for (int i = 0; i < tamanho; i++) {
-        dados[i] = i + 1;
+        dados[i] = i;  
     }
     return dados;
 }
@@ -404,16 +404,29 @@ private static int[] gerarDadosOrdenados(int tamanho) {
 private static int[] gerarDadosInversos(int tamanho) {
     int[] dados = new int[tamanho];
     for (int i = 0; i < tamanho; i++) {
-        dados[i] = tamanho - i;
+        dados[i] = tamanho - i - 1;  
     }
     return dados;
 }
 
 private static int[] gerarDadosAleatorios(int tamanho) {
     int[] dados = new int[tamanho];
+    
+    
     for (int i = 0; i < tamanho; i++) {
-        dados[i] = ThreadLocalRandom.current().nextInt(1, tamanho * 10 + 1);
+        dados[i] = i;  
     }
+    
+    
+    ThreadLocalRandom random = ThreadLocalRandom.current();
+    for (int i = tamanho - 1; i > 0; i--) {
+        int j = random.nextInt(i + 1);
+        
+        int temp = dados[i];
+        dados[i] = dados[j];
+        dados[j] = temp;
+    }
+    
     return dados;
 }
 }
