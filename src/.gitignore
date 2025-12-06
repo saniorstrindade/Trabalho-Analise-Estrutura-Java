@@ -1,6 +1,6 @@
-# Ignorar arquivos compilados
+# Ignorar arquivos compilados.
 *.class
 
-# Pasta de compilação
+# Pasta de compilação.
 /bin/
 out/
