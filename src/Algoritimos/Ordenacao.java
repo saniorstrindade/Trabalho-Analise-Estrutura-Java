@@ -11,7 +11,7 @@ public class Ordenacao {
         }
     }
 
-    // ordenação bubble sort
+    // ordenação bubble sort (escolhi esse para validar e testar)
     public static ResultadoOrdenacao bubbleSort(int[] arr) {
         long count = 0;
         int n = arr.length;
@@ -34,7 +34,7 @@ public class Ordenacao {
         return new ResultadoOrdenacao(count);
     }
 
-    // ordenação insertion sort
+    // ordenação insertion sort(coloquei para estudar prova , não tem teste)
     public static ResultadoOrdenacao insertionSort(int[] arr) {
         long count = 0;
         int n = arr.length;
@@ -56,7 +56,7 @@ public class Ordenacao {
         return new ResultadoOrdenacao(count);
     }
 
-    // ordenação selection sort
+    // ordenação selection sort (coloquei para estudar prova , não tem teste)
     public static ResultadoOrdenacao selectionSort(int[] arr) {
         long count = 0;
         int n = arr.length;
@@ -79,7 +79,7 @@ public class Ordenacao {
         return new ResultadoOrdenacao(count);
     }
 
-    // ordenação merger sort
+    // ordenação merger sort (escolhi esse para validar e testar)
 
     private static long mergeSortCount = 0;
     
@@ -150,7 +150,7 @@ public class Ordenacao {
         }
     }
 
-    //ordenação quick sort
+    //ordenação quick  sort (coloquei para estudar prova , não tem teste)
     
     private static long quickSortCount = 0;
     

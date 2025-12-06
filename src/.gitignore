@@ -1,0 +1,6 @@
+# Ignorar arquivos compilados
+*.class
+
+# Pasta de compilação
+/bin/
+out/
