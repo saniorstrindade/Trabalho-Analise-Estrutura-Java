@@ -1,25 +1,28 @@
-📘 Análise de Desempenho de Estruturas de Dados em Java
+# 📘 Análise de Desempenho de Estruturas de Dados em Java
 
-Projeto desenvolvido para a disciplina de Estrutura de Dados, realizando testes de desempenho entre Vetor, Árvore Binária de Busca (ABB) e Árvore AVL.
-Também foram implementados cinco algoritmos de ordenação e dois métodos de busca.
+Projeto desenvolvido para a disciplina de **Estrutura de Dados**, realizando testes de desempenho entre **Vetor**, **Árvore Binária de Busca (ABB)** e **Árvore AVL**.
 
-📌 Descrição do Projeto
+Também foram implementados **cinco algoritmos de ordenação** e **dois métodos de busca**.
 
-O objetivo foi implementar todas as estruturas manualmente, sem usar bibliotecas do Java (ArrayList, TreeSet, etc.), e comparar:
+---
 
-tempo de inserção
+## 📌 Descrição do Projeto
 
-tempo de busca
+O objetivo foi implementar todas as estruturas **manualmente**, sem usar bibliotecas do Java (`ArrayList`, `TreeSet`, etc.), e comparar:
 
-número de operações
+- ⏱️ Tempo de inserção
+- 🔍 Tempo de busca
+- 🔢 Número de operações
+- 📊 Impacto da ordem dos dados
+- ⚖️ Diferença entre estruturas balanceadas e não balanceadas
 
-impacto da ordem dos dados
+Além disso, foram feitos **testes de ordenação** em vetores de tamanhos variados.
 
-diferença entre estruturas balanceadas e não balanceadas
+---
 
-Além disso, foram feitos testes de ordenação em vetores de tamanhos variados.
+## 📁 Estrutura do Projeto
 
-📁 Estrutura do Projeto
+```
 src/
 │
 ├── Algoritmos/
@@ -34,121 +37,131 @@ src/
 │
 ├── Main.java                       # Executa todos os testes e medições
 └── README.md
+```
 
-▶️ Como Compilar
-Opção 1 — Terminal / CMD
+---
+
+## ▶️ Como Compilar
+
+### Opção 1 — Terminal / CMD
+
+```bash
 cd src
 javac Main.java
+```
 
-Opção 2 — VS Code / IntelliJ / Eclipse
+### Opção 2 — VS Code / IntelliJ / Eclipse
 
-Abra a pasta do projeto
+1. Abra a pasta do projeto
+2. Compile normalmente (a IDE detecta automaticamente os arquivos)
 
-Compile normalmente (a IDE detecta automaticamente os arquivos)
+---
 
-▶️ Como Executar
-Terminal:
+## ▶️ Como Executar
+
+### Terminal:
+
+```bash
 cd src
 java Main
+```
 
-IDE:
+### IDE:
 
-Execute a classe Main.java (botão Run ▶️)
+- Execute a classe `Main.java` (botão Run ▶️)
 
-📊 Resultados Gerados
+---
+
+## 📊 Resultados Gerados
 
 O programa produz tabelas e métricas como:
 
-Tempo de inserção (ms)
+- ⏱️ **Tempo de inserção** (ms)
+- 🔍 **Tempo de busca** (ms)
+- 🔢 **Operações realizadas** (OP)
+- 📊 Comparação entre **ABB x AVL**
+- 🔄 **Bubble Sort x Merge Sort**
 
-Tempo de busca (ms)
+> **Nota:** Todos os resultados são calculados usando **média de 5 execuções**.
 
-Operações realizadas (OP)
+---
 
-Comparação entre ABB x AVL
+## 🏗️ Estruturas Implementadas
 
-Bubble Sort x Merge Sort
+### 📦 Vetor Dinâmico
 
-Todos os resultados são calculados usando média de 5 execuções.
+- Crescimento automático
+- Inserção **O(1)** amortizado
+- Busca Sequencial **O(n)**
+- Busca Binária **O(log n)**
 
-🏗️ Estruturas Implementadas
-Vetor Dinâmico
+### 🌳 ABB (Árvore Binária de Busca)
 
-Crescimento automático
+- Inserção/Busca **O(log n)** no caso médio
+- Pode degenerar (pior caso **O(n)**)
 
-Inserção O(1) amortizado
+### ⚖️ AVL
 
-Busca Sequencial O(n)
+- Sempre balanceada
+- Inserção/Busca garantidos em **O(log n)**
+- Implementação completa das **rotações**
 
-Busca Binária O(log n)
+---
 
-ABB (Árvore Binária de Busca)
+## 🔄 Algoritmos de Ordenação
 
-Inserção/Busca O(log n) no caso médio
+### Testados no relatório:
 
-Pode degenerar (pior caso O(n))
+- **Bubble Sort** — O(n²)
+- **Merge Sort** — O(n log n)
 
-AVL
+### Implementados como estudo:
 
-Sempre balanceada
+- Insertion Sort
+- Selection Sort
+- Quick Sort
 
-Inserção/Busca garantidos em O(log n)
+> **Importante:** Todos foram feitos **manualmente**, sem `Arrays.sort()`.
 
-Implementação completa das rotações
+---
 
-🔄 Algoritmos de Ordenação
+## 📈 Conjuntos de Teste
 
-Testados no relatório:
+Foram utilizados **três estados diferentes** do vetor:
 
-Bubble Sort — O(n²)
+1. **Ordenado** (0, 1, 2, …)
+2. **Inverso** (n, n-1, n-2, …)
+3. **Aleatório** (Fisher-Yates, sem valores repetidos)
 
-Merge Sort — O(n log n)
+### Tamanhos testados:
 
-Implementados como estudo:
+- 100 elementos
+- 1.000 elementos
+- 10.000 elementos
 
-Insertion Sort
+> Cada teste foi executado **5 vezes** (com aquecimento da JVM).
 
-Selection Sort
+---
 
-Quick Sort
+## 🔧 Observações Técnicas
 
-Todos foram feitos manualmente, sem Arrays.sort().
+✅ Sem uso de estruturas prontas (`ArrayList`, `TreeSet`, `Collections`…)  
+✅ Função própria de cópia (`copiarArray()`)  
+✅ Medição usando `System.nanoTime()`  
+✅ Contador de operações para validar **Big-O**  
+✅ Tratamento contra duplicatas nos vetores aleatórios  
+✅ Rotações simples e duplas na AVL foram implementadas manualmente
 
-📈 Conjuntos de Teste
+---
 
-Foram utilizados estados diferentes do vetor:
+## 👨‍💻 Autor
 
-Ordenado (0,1,2,…)
-
-Inverso
-
-Aleatório (Fisher-Yates, sem valores repetidos)
-
-Com tamanhos:
-
-100
-
-1.000
-
-10.000 elementos
-
-Cada teste foi executado 5 vezes (com aquecimento da JVM).
-
-🔧 Observações Técnicas
-
-Sem uso de estruturas prontas (ArrayList, TreeSet, Collections…)
-
-Função própria de cópia (copiarArray())
-
-Medição usando System.nanoTime()
-
-Contador de operações para validar Big-O
-
-Tratamento contra duplicatas nos vetores aleatórios
-
-Rotações simples e duplas na AVL foram implementadas manualmente
-
-👨‍💻 Autor:
-
-Sânio Rodrigues Silva Trindade  4º Período
+**Sânio Rodrigues Silva Trindade**  
+4º Período  
 Trabalho acadêmico – Estrutura de Dados – 2025
+
+---
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins educacionais.
